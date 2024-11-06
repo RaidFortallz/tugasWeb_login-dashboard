@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Dashboard</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #9227fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .dashboard-container {
+            max-width: 1000px;
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #usernameDisplay{
+            font-weight: bold;
+        }
+        #image{
+            width: 300px;
+            height: 160px;
+        }
+        .logout-btn {
+            background-color: #dc3545;
+            border: none;
+            color: #FFF;
+        }
+        .logout-btn:hover {
+            background-color: #9227fc;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container text-center">
+        <h1 class="mb-3">Selamat Datang di Dashboard</h1>
+        <p class="mt-3">Anda berhasil login sebagai <span id="usernameDisplay"></span></p>
+        <img src="images/spiderman.jpg" alt="image" id="image" class="d-block mx-auto mb-5">
+        <a href="index.html" class="btn logout-btn mt-3" onclick="logout()">Logout</a>
+    </div>
+
+    <script>
+        document.getElementById("usernameDisplay").innerText = localStorage.getItem("username");
+
+        function logout(){
+            localStorage.removeItem("username");
+        }
+
+    </script>
+
+</body>
+</html>
